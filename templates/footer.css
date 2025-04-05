@@ -1,0 +1,81 @@
+/* Reset default styles - removes browser defaults for consistent rendering */
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box; /* includes padding in width calculations */
+}
+
+/* Document base styling - sets foundation for page */
+html, body {
+   height: 100%; /* ensures full height of viewport */
+   font-family: Arial, sans-serif;
+   font-size: 14px; /* base font size for entire page */
+}
+
+/* Body layout - creates flex container for full-page structure */
+body {
+   display: flex;
+   flex-direction: column; /* stacks children vertically */
+   min-height: 100vh; /* ensures minimum height of viewport */
+}
+
+/* Main content area - expands to fill available space */
+.content {
+   flex: 1; /* grows to fill space between header and footer */
+}
+
+/* Footer container - styles the entire footer section */
+.footer {
+   background-color: black;
+   color: white;
+   padding: 30px 20px 20px; /* top, horizontal, bottom padding */
+   display: flex;
+   justify-content: flex-start; /* aligns columns to left instead of distributing */
+   align-items: flex-start; /* aligns columns to top */
+   flex-wrap: wrap; /* allows columns to wrap on smaller screens */
+   width: 100%;
+   gap: 30px; /* creates consistent spacing between columns */
+}
+
+/* Footer columns - styles each content section */
+.footer-column {
+   flex: 0 0 auto; /* don't grow or shrink, use natural width */
+   min-width: 150px; /* prevents columns from becoming too narrow */
+   max-width: 200px; /* caps maximum width */
+   padding: 0; /* remove padding since we're using gap */
+   margin-bottom: 20px; /* space below each column */
+}
+
+/* Column headers - styles the category titles */
+.footer-column h3 {
+   margin-bottom: 15px; /* space between header and list items */
+   font-size: 14px; /* base font */
+}
+
+/* Removes bullets from lists */
+.footer-column ul {
+   list-style: none;
+}
+
+/* Individual list items spacing */
+.footer-column ul li {
+   margin-bottom: 8px; /* vertical spacing between links */
+}
+
+/* Link styling - sets default appearance */
+.footer-column ul li a {
+   color: white;
+   text-decoration: none; /* removes underlines */
+}
+
+/* Hover effect for links */
+.footer-column ul li a:hover {
+   text-decoration: underline; /* adds underline on hover */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+   .footer-column {
+       min-width: 150px; /* narrower columns on mobile */
+   }
+}
